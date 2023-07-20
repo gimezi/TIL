@@ -15,6 +15,8 @@
     print(result) # 1으로 출력
     # 같이 쓰인 print도 내장 함수
     ```
+- 리스트의 합을 구해주는 **sum**(list)
+- 리스트를 순서대로 정렬해주는 list.sort()
 - 내장 함수의 목록은 [Python 공식문서](https://docs.python.org/3/library/functions.html) 확인
 
 ## 함수의 구조
@@ -81,42 +83,42 @@ def greet(name): # name은 매개변수
 - 기본 인자(default Arguments)
   - 함수 정의에서 매개변수에 기본 값을 할당하는 것
   - 함수 호출 시 인자를 전달하지 않으면 기본값이 매개변수에 할당됨
-    ```python
-    def greet(name,age = 30): # 여기서 name을 default인자로 하면 오류가 남
-        print(f'{name}님 {age}살이시군요') 
-    # 기본인자는 뒤에서부터 써줘야합니다.
+  ```python
+  def greet(name,age = 30): # 여기서 name을 default인자로 하면 오류가 남
+      print(f'{name}님 {age}살이시군요') 
+  # 기본인자는 뒤에서부터 써줘야합니다.
     
-    greet('Alice') # age가 없어도 자동으로 30으로 출력이 됨
-    ```
+  greet('Alice') # age가 없어도 자동으로 30으로 출력이 됨
+  ```
 - 키워드 인자
   - 함수 호출 시 인자의 이름과 함께 값을 전달하는 인자
   - 매개변수와 인자를 일치시키지 않고, 특정 매개변수에 값을 할당할 수 있다
   - 인자의 순서는 중요하지 않으며, 인자의 이름을 명시하여 전달
   - 키워드 인자는 위치인자랑 같이 사용하지 못함
-    ```python
-    def greet(name,age = 30):
-        print(f'{name}님 {age}살이시군요')
+  ```python
+  def greet(name,age = 30):
+    print(f'{name}님 {age}살이시군요')
     
-    greet('Alice', 25) 
-    # Alice님 25살이시군요
-    greet(25, 'Alice') 
-    # 25님 Alice살이시군요
+  greet('Alice', 25) 
+  # Alice님 25살이시군요
+  greet(25, 'Alice') 
+  # 25님 Alice살이시군요
     
-    #키워드 인자 이용
-    greet(age = 25, name = 'Alice') 
-    # Alice님 25살이시군요
-    greet(age = 25, 'Alice')
-    # 이렇게 한개만 해주는건 Error(위치인자와 키워드인자를 같이 사용했기 때문) 
-    ```
-- 임의의 인자 목록 
+  #키워드 인자 이용
+  greet(age = 25, name = 'Alice') 
+  # Alice님 25살이시군요
+  greet(age = 25, 'Alice')
+  # 이렇게 한개만 해주는건 Error(위치인자와 키워드인자를 같이 사용했기때문) 
+  ```
+- 가변 인자 목록 
   - 정해지지 않은 개수의 인자를 처리하는 인자
-  - 함수 정의 시 매개변수 앞에 '*'를 붙여 사용하며, 여러개의 인자를 tuple로 처리
+  - 함수 정의 시 매개변수 앞에 '*'(에스터리스크)를 붙여 사용하며, 여러개의 인자를 tuple로 처리
   - 대표적인 예시: print()
-```python
-def cal(*argm): # 이런식으로 매개변수에 *이 붙는다
-    total = Sum(argm)
-    print(f'합게는 {}')
-```  
+  ```python
+  def cal(*argm): # 이런식으로 매개변수에 *이 붙는다
+      total = Sum(argm)
+      print(f'합계는 {total}')
+  ```  
 - 임의의 키워드 인자 목록
   - 함수 정의시 매개변수 앞에 '**'를 붙여 사용하며, 여러 개의 인자를 dictionary로 묶어 처리  
   <dir>
@@ -263,6 +265,8 @@ result = map(lambda x: x*2, nums)
 print(list(result))
 ```
 - lambda는 일회용으로 쓰기 좋음
+- 함수 이름이 필요가 없다
+- return도 없다, 표현식의 결과가 바로 반환되므로!
 - 어려우면 그냥 함수 정의해서 써도 됨
 
 ## Packing
