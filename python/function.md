@@ -78,12 +78,13 @@ def greet(name): # name은 매개변수
     
     result = greet('Alice',25) # 인자가 두개 필요함
     ```
-- 기본 인자
+- 기본 인자(default Arguments)
   - 함수 정의에서 매개변수에 기본 값을 할당하는 것
   - 함수 호출 시 인자를 전달하지 않으면 기본값이 매개변수에 할당됨
     ```python
-    def greet(name,age = 30):
-        print(f'{name}님 {age}살이시군요')
+    def greet(name,age = 30): # 여기서 name을 default인자로 하면 오류가 남
+        print(f'{name}님 {age}살이시군요') 
+    # 기본인자는 뒤에서부터 써줘야합니다.
     
     greet('Alice') # age가 없어도 자동으로 30으로 출력이 됨
     ```
@@ -91,7 +92,7 @@ def greet(name): # name은 매개변수
   - 함수 호출 시 인자의 이름과 함께 값을 전달하는 인자
   - 매개변수와 인자를 일치시키지 않고, 특정 매개변수에 값을 할당할 수 있다
   - 인자의 순서는 중요하지 않으며, 인자의 이름을 명시하여 전달
-  - 호출시 키워드 인자는 위치 인자 뒤에 위치해야 함
+  - 키워드 인자는 위치인자랑 같이 사용하지 못함
     ```python
     def greet(name,age = 30):
         print(f'{name}님 {age}살이시군요')
