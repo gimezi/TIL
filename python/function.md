@@ -264,3 +264,61 @@ print(list(result))
 - lambda는 일회용으로 쓰기 좋음
 - 어려우면 그냥 함수 정의해서 써도 됨
 
+## Packing
+여러 value를 하나의 sequence로 묶는 것
+```python
+# 패킹 예시
+packing_value = 1, 2, 3, 4, 5
+print(packing_value) # 튜플형태로 묶임
+
+nums = [1, 2, 3, 4, 5]
+a, *b, c = nums
+print(a,b,c) # 1 [2, 3, 4] 5
+
+# print를 이용한 패킹
+print('hi', 'hello', 'goodbye', sep = '-') # hi-hello-goodbye
+print('hi',end= '')
+print('hello') #hihello
+
+# *를 언패킹 연산자로 활용
+names = ['minho', 'yong', 'chan']
+print(*names) # minho yong chan
+
+## ** 딕셔러니 언패킹 연산자
+def my_f(x, y, z):
+  print(x, y, z)
+dic_value = {'x' : 1,'y' : 2,'z' : 3} #1 2 3
+my_f(**dic_value)
+```
+
+# Module
+- 라이브러리 = 모듈 + 패키지
+
+```python
+import math #control+우클릭 하면 더 자세하게 볼 수 있다
+
+print(math.pi)
+print(math.sqrt(4))
+
+from random import *
+
+print(randint(1,10))
+```
+- 직접 모듈 파일을 정의해서 사용가능
+
+# 패키지
+
+from my_package.math(파일 경로) import my_math(함수이름)
+
+## 외부 패키지
+- git 창에서 pip install request
+```python
+import requests
+
+url = 'https://random-data-api.com/api/v2/users'
+
+response = requests.get(url).json()
+print(response)
+# dic값이 결과로 나옴
+```
+위의 dic의 결과를 시각화해서 보여주는 [사이트](https://jsonviewer.stack.hu/)
