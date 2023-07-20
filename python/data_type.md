@@ -76,8 +76,13 @@
 print(type('Hello World')) #str
 ```
 - Escape sequence : 역슬래시 뒤에 특정 문자가 와서 특수한 기능을 하는 문자 조합
-  ![Alt text](image.png)
-
+  |예약 문자|내용(의미)|
+  |---|---|
+  | \n | 줄 바꿈 |
+  | \t | 탭 |
+  | \\ | 백슬래시 |
+  | \' | 작은 따옴표 |
+  | \" | 큰 따옴표 |
 - String Interpolation : 문자열 내에 변수나 표현식을 삽입하는 방법
   - f-string : 문자열에 f 또는 F 접두어를 붙이고 표현식을 {expression}로 작성하여 문자열에 파이썬 표현식의 값을 삽입할 수 있음
   ```python
