@@ -1,4 +1,6 @@
 # 알고리즘
+여기 리드미 조금 수정!
+
 :문제 해결을 위한 절차나 방법
 (SWea에서 programming intermediate랑 advanced수업 참조)
 
